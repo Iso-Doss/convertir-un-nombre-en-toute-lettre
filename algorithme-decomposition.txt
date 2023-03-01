@@ -1,0 +1,37 @@
+Algorithme decomposition;
+
+Var
+    nombre, milliards, millions, 
+    milliers, uniters : entiers;
+
+Debut
+
+    Ecrire "Entrer un nombre";
+    Lire nombre;
+    
+    milliards <-- 0;
+    millions <-- 0;
+    milliers <-- 0;
+    uniters <-- 0;
+
+    Si nombre div 1000000000 > 0 alors
+        milliards <-- nombre div 1000000000;
+    FinSi
+
+    nombre <-- nombre - (milliards * 1000000000);
+
+    Si nombre div 1000000 > 0 alors
+        millions <-- nombre div 1000000;
+    FinSi
+
+    nombre <-- nombre - (millions * 1000000);
+
+    Si nombre div 1000 > 0 alors
+        milliers <-- nombre div 1000;
+    FinSi
+
+    nombre <-- nombre - (milliers * 1000);
+
+    uniters <-- nombre;
+
+Fin 
